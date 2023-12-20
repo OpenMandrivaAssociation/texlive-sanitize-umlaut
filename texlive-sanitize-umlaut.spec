@@ -1,6 +1,6 @@
 Name:		texlive-sanitize-umlaut
-Version:	63770
-Release:	2
+Version:	67126
+Release:	1
 Summary:	Sanitize umlauts for MakeIndex and pdfLaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/sanitize-umlaut
