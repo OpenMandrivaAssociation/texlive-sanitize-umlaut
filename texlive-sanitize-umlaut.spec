@@ -3,7 +3,7 @@ Version:	67126
 Release:	1
 Summary:	Sanitize umlauts for MakeIndex and pdfLaTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/sanitize-umlaut
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/sanitize-umlaut
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/sanitize-umlaut.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/sanitize-umlaut.doc.r%{version}.tar.xz
