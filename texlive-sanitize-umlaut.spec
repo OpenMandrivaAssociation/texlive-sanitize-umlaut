@@ -1,39 +1,24 @@
-Name:		texlive-sanitize-umlaut
-Version:	67126
-Release:	1
+%global tl_name sanitize-umlaut
+%global tl_revision 77720
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.4.0
+Release:	%{tl_revision}.1
 Summary:	Sanitize umlauts for MakeIndex and pdfLaTeX
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/sanitize-umlaut
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/sanitize-umlaut.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/sanitize-umlaut.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/sanitize-umlaut.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/sanitize-umlaut.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package sanitizes umlauts to be used directly in index
-entries for MakeIndex and friends with pdfLaTeX. This means
-that inside \index an umlaut can be used as "U or as U. In both
-cases, the letter is written as "U into the raw index file for
-correct processing with MakeIndex and pdfLaTeX.
+This package sanitizes umlauts to be used directly in index entries for
+MakeIndex and friends with pdfLaTeX. This means that inside \index an
+umlaut can be used as "U or as U. In both cases, the letter is written
+as "U into the raw index file for correct processing with MakeIndex and
+pdfLaTeX.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/sanitize-umlaut
-%doc %{_texmfdistdir}/doc/latex/sanitize-umlaut
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
